@@ -11,7 +11,7 @@ describe('setters/blog', function () {
 
     it('sets blogs', function () {
       expect(this.result).to.equal(Map({
-        blogs: List([])
+        blogs: Map({})
       }))
     });
   });
@@ -20,15 +20,15 @@ describe('setters/blog', function () {
     beforeEach(function () {
       const initialState = Map();
       this.result = setBlogs(initialState, [
-        { id: 1, title: 'Blog Title', content: 'Blog Content' }
+        { id: 'uuid', title: 'Blog Title', content: 'Blog Content' }
       ]);
     });
 
     it('sets blogs', function () {
       expect(this.result).to.equal(Map({
-        blogs: List([
-          Map({ id: 1, title: 'Blog Title', content: 'Blog Content' })
-        ])
+        blogs: Map({
+          'uuid': Map({ id: 'uuid', title: 'Blog Title', content: 'Blog Content' })
+        })
       }))
     });
   });
