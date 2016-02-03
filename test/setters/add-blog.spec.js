@@ -12,19 +12,15 @@ describe('setters/add-blog', function () {
 
     it('creates a new blog map', function () {
       expect(this.result).to.equal(Map({
-        blogs: Map({
-          'uuid1': Map({ id: 'uuid1', title: 'Blog Title 1', content: 'Blog Content 1' })
-        })
-      }))
+        'uuid1': Map({ id: 'uuid1', title: 'Blog Title 1', content: 'Blog Content 1' })
+      }));
     });
   });
 
   context('when blogs are present', function () {
     beforeEach(function () {
       const initialState = Map({
-        blogs: Map({
           'uuid1': Map({ id: 'uuid1', title: 'Blog Title 1', content: 'Blog Content 1' })
-        })
       });
 
       this.result = addBlog(initialState,
@@ -34,11 +30,9 @@ describe('setters/add-blog', function () {
 
     it('adds the required blog without modifying the existing blogs', function () {
       expect(this.result).to.equal(Map({
-        blogs: Map({
-          'uuid1': Map({ id: 'uuid1', title: 'Blog Title 1', content: 'Blog Content 1' }),
-          'uuid2': Map({ id: 'uuid2', title: 'Blog Title 2', content: 'Blog Content 2' })
-        })
-      }))
+        'uuid1': Map({ id: 'uuid1', title: 'Blog Title 1', content: 'Blog Content 1' }),
+        'uuid2': Map({ id: 'uuid2', title: 'Blog Title 2', content: 'Blog Content 2' })
+      }));
     });
   });
 });

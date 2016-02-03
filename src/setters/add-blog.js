@@ -1,7 +1,7 @@
 import Immutable, { Map } from 'immutable';
 
-export default function (state, blog) {
+export default function (blogState, blog) {
   const immutableBlog = Immutable.fromJS(blog);
   const id = immutableBlog.get('id');
-  return state.setIn(['blogs', id], immutableBlog);
+  return blogState.set(id, immutableBlog);
 }

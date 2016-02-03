@@ -7,19 +7,15 @@ describe('setters/vote', function () {
     beforeEach(function () {
       const firstBlog = Map({ id: 'uuid', title: 'Blog Title', content: 'Blog Content' });
       const initialState = Map({
-        blogs: Map({
-          'uuid': Map({ id: 'uuid', title: 'Blog Title', content: 'Blog Content' })
-        })
+        'uuid': Map({ id: 'uuid', title: 'Blog Title', content: 'Blog Content' })
       });
       this.result = vote(initialState, firstBlog);
     });
 
     it('sets the vote count to one', function () {
       expect(this.result).to.equal(Map({
-        blogs: Map({
-          'uuid': Map({ id: 'uuid', title: 'Blog Title', content: 'Blog Content', votes: 1 })
-        })
-      }))
+        'uuid': Map({ id: 'uuid', title: 'Blog Title', content: 'Blog Content', votes: 1 })
+      }));
     });
   });
 
@@ -27,19 +23,15 @@ describe('setters/vote', function () {
     beforeEach(function () {
       const firstBlog = Map({ id: 'uuid', title: 'Blog Title', content: 'Blog Content', votes: 3 });
       const initialState = Map({
-        blogs: Map({
-          'uuid': Map({ id: 'uuid', title: 'Blog Title', content: 'Blog Content', votes: 3 })
-        })
+        'uuid': Map({ id: 'uuid', title: 'Blog Title', content: 'Blog Content', votes: 3 })
       });
       this.result = vote(initialState, firstBlog);
     });
 
     it('sets the vote count to four', function () {
       expect(this.result).to.equal(Map({
-        blogs: Map({
-          'uuid': Map({ id: 'uuid', title: 'Blog Title', content: 'Blog Content', votes: 4 })
-        })
-      }))
+        'uuid': Map({ id: 'uuid', title: 'Blog Title', content: 'Blog Content', votes: 4 })
+      }));
     });
   });
 });
