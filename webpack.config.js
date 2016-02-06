@@ -1,5 +1,10 @@
+var webpack = require('webpack');
+const DEV_PORT = 3000;
+
 module.exports = {
   entry: [
+    `webpack-dev-server/client?http://0.0.0.0:${DEV_PORT}`,
+    'webpack/hot/only-dev-server',
     './src/index.js'
   ],
   output: {
@@ -11,7 +16,7 @@ module.exports = {
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loader: 'babel'
+        loader: 'react-hot!babel'
       }
     ]
   },
@@ -24,6 +29,10 @@ module.exports = {
   },
   devServer: {
     contentBase: './dist',
-    port: 3000
-  }
+    port: DEV_PORT,
+    hot: true
+  },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin()
+  ]
 };
