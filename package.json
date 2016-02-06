@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "export NODE_PATH=$NODE_PATH:.; mocha --compilers js:babel-core/register --require ./test/test-helper.js --recursive",
+    "test": "export NODE_PATH=$NODE_PATH:.; mocha --compilers js:babel-core/register --require ./test/test-helper.js 'test/**/*.js?(x)'",
     "test-dev": "npm run test -- --watch",
     "build": "webpack",
     "watch": "webpack-dev-server"
@@ -27,7 +27,9 @@
     "chai": "~3.5.0",
     "chai-immutable": "~1.5.3",
     "mocha": "~2.4.5",
+    "react-addons-test-utils": "~0.14.7",
     "react-hot-loader": "~1.3.0",
+    "skin-deep": "~0.14.0",
     "webpack": "~1.12.13",
     "webpack-dev-server": "~1.14.1"
   },
