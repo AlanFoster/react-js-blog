@@ -1,6 +1,12 @@
 import React from 'react';
+import ImmutablePropTypes from 'react-immutable-proptypes';
+import blogPropTypes from './prop-types/blog';
 
 const Blog = React.createClass({
+  propTypes: {
+    blog: blogPropTypes.isRequired
+  },
+
   render() {
     const blog = this.props.blog;
 

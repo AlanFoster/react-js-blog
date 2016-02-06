@@ -1,9 +1,15 @@
 import React from 'react';
-import EmptyState from './empty-state';
-import Blog from '../blog';
+import ImmutablePropTypes from 'react-immutable-proptypes';
 import _ from 'lodash';
+import EmptyState from './empty-state';
+import blogPropTypes from '../blog/prop-types/blog';
+import Blog from '../blog';
 
 const BlogList = React.createClass({
+  propTypes: {
+    blogs: ImmutablePropTypes.mapOf(blogPropTypes)
+  },
+
   isEmpty() {
     const blogs = this.props.blogs;
 
