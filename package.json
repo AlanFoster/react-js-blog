@@ -6,8 +6,8 @@
   "scripts": {
     "test": "export NODE_PATH=$NODE_PATH:.; mocha --compilers js:babel-core/register --require ./test/test-helper.js --recursive",
     "test-dev": "npm run test -- --watch",
-    "webpack": "webpack",
-    "webpack-dev-server": "webpack-dev-server"
+    "build": "webpack",
+    "watch": "webpack-dev-server"
   },
   "repository": {
     "type": "git",
