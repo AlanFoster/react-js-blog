@@ -7,7 +7,14 @@ import Blog from '../blog';
 
 const BlogList = React.createClass({
   propTypes: {
-    blogs: ImmutablePropTypes.mapOf(blogPropTypes)
+    blogs: ImmutablePropTypes.mapOf(blogPropTypes),
+    onVote: React.PropTypes.func
+  },
+
+  getDefaultProps() {
+    return {
+      onVote: _.noop
+    }
   },
 
   isEmpty() {
@@ -21,7 +28,7 @@ const BlogList = React.createClass({
 
     const blogs = (
       this.props.blogs.toList()
-                .map(blog => <Blog key={blog.get('id')} blog={blog} />)
+                .map(blog => <Blog key={blog.get('id')} blog={blog} onVote={this.props.onVote} />)
                 .toJS()
     );
 
