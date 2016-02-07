@@ -1,18 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router'
+import Navigation from '../navigation';
 
 const App = React.createClass({
   render() {
     return (
       <div>
-        <h1>Blogs</h1>
-        <hr />
-        <div>
-          <Link to='/'>Home</Link>
-          <Link to='/new'>New Blog</Link>
-        </div>
-        <hr />
-        <div>
+        <Navigation />
+        <div className='container'>
           {this.props.children}
         </div>
       </div>
