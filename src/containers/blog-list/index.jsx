@@ -9,8 +9,8 @@ const mapStateToProps = function (state) {
   };
 };
 
-const actionCreators = {
+const mapDispatchToProps = {
   onVote: vote
 };
 
-export default connect(mapStateToProps, actionCreators)(BlogList);
+export default connect(mapStateToProps, mapDispatchToProps)(BlogList);

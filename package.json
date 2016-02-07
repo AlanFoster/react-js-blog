@@ -34,6 +34,8 @@
     "webpack-dev-server": "~1.14.1"
   },
   "dependencies": {
+    "formsy-react": "~0.17.0",
+    "formsy-react-components": "~0.6.6",
     "history": "~2.0.0",
     "immutable": "~3.7.6",
     "lodash": "~4.2.0",
@@ -42,6 +44,7 @@
     "react-immutable-proptypes": "~1.5.1",
     "react-redux": "~4.4.0",
     "react-router": "~1.0.3",
-    "redux": "~3.3.1"
+    "redux": "~3.3.1",
+    "uuid": "~2.0.1"
   }
 }
