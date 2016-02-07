@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "export NODE_PATH=$NODE_PATH:.; mocha --compilers js:babel-core/register --require ./test/test-helper.js 'test/**/*.js?(x)'",
+    "test": "mocha --compilers js:babel-core/register --require ./tests/test-helper.js --watch-extensions js,jsx '**/tests/*.spec.js?(x)'",
     "test-dev": "npm run test -- --watch",
     "build": "webpack",
     "watch": "webpack-dev-server"

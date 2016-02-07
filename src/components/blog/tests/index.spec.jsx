@@ -2,9 +2,9 @@ import { expect } from 'chai';
 import React from 'react';
 import sd from 'skin-deep';
 import { List, Map } from 'immutable';
-import Component from 'src/components/blog';
+import Component from '../index';
 
-describe('components/blog', function () {
+describe('blog', function () {
   context('when all fields are present', function () {
     beforeEach(function () {
       const blog = Map({

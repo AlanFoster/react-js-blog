@@ -2,10 +2,9 @@ import { expect } from 'chai';
 import React from 'react';
 import sd from 'skin-deep';
 import { List, Map } from 'immutable';
-import Component from 'src/components/blog-list';
-import Blog from 'src/components/blog';
+import Component from '../index';
 
-describe('components/blog-list', function () {
+describe('blog-list', function () {
   context('when there are no blogs to render', function () {
     beforeEach(function () {
       this.tree = sd.shallowRender(<Component />);

@@ -2,9 +2,9 @@ import { expect } from 'chai';
 import React from 'react';
 import sd from 'skin-deep';
 import { List, Map } from 'immutable';
-import Component from 'src/components/page-not-found';
+import Component from '../index';
 
-describe('components/page-not-found', function () {
+describe('page-not-found', function () {
   beforeEach(function () {
     this.tree = sd.shallowRender(<Component />);
   });

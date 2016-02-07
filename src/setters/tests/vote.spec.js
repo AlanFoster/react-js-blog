@@ -1,8 +1,8 @@
 import { expect } from 'chai';
 import { List, Map } from 'immutable';
-import { vote } from 'src/setters';
+import { vote } from '../index';
 
-describe('setters/vote', function () {
+describe('vote', function () {
   context('when the blog has no previous votes', function () {
     beforeEach(function () {
       const firstBlog = Map({ id: 'uuid', title: 'Blog Title', content: 'Blog Content' });

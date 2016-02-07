@@ -1,10 +1,10 @@
 import { expect } from 'chai';
 import { List, Map } from 'immutable';
 import _ from 'lodash';
-import Actions from 'src/actions';
-import reducer from 'src/reducers';
+import Actions from '../../actions';
+import reducer from '../index';
 
-describe('reducers/add-blog', function () {
+describe('add-blog', function () {
   context('adding multiple blogs and voting for one', function () {
     beforeEach(function () {
       const actions = [

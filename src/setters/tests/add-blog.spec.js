@@ -1,8 +1,8 @@
 import { expect } from 'chai';
 import { List, Map } from 'immutable';
-import { addBlog } from 'src/setters';
+import { addBlog } from '../index';
 
-describe('setters/add-blog', function () {
+describe('add-blog', function () {
   context('when no blogs are present', function () {
     beforeEach(function () {
       const initialState = Map();
