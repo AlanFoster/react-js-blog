@@ -1,11 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import BlogListContainer from './containers/blog-list';
 import { Map } from 'immutable';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import reducer from './reducers';
 import Actions from './actions';
+import { Router } from 'react-router';
+import createBrowserHistory from 'history/lib/createBrowserHistory'
+import routes from './routes';
 
 const store = createStore(reducer);
 store.dispatch({
@@ -18,8 +20,8 @@ store.dispatch({
 });
 
 const application = (
-  <Provider store={store}>
-    <BlogListContainer />
+  <Provider store={store} history={createBrowserHistory()}>
+    <Router>{routes}</Router>
   </Provider>
 );
 

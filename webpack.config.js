@@ -25,6 +25,10 @@ module.exports = {
       '',
       '.js',
       '.jsx'
+    ],
+    modulesDirectories: [
+      'src',
+      'node_modules'
     ]
   },
   devServer: {
