@@ -1,19 +1,25 @@
 import React from 'react';
-import { Link } from 'react-router'
+import { browserHistory } from 'react-router'
 import { Nav, Navbar, NavItem } from 'react-bootstrap';
 
 const Navigation = React.createClass({
+  navigateTo(path) {
+    return function () {
+      browserHistory.push(path);
+    }
+  },
+
   render() {
     return (
       <Navbar>
         <Navbar.Header>
           <Navbar.Brand>
-            <a href="#">React-Bootstrap</a>
+            <a href="#" onClick={this.navigateTo('/')}>React-Bootstrap</a>
           </Navbar.Brand>
         </Navbar.Header>
         <Nav>
-          <NavItem href="#">Home</NavItem>
-          <NavItem href="#/new">Add Blog</NavItem>
+          <NavItem href="#" onClick={this.navigateTo('/')}>Home</NavItem>
+          <NavItem href="#" onClick={this.navigateTo('/new')}>New Blog</NavItem>
         </Nav>
       </Navbar>
     )

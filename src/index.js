@@ -5,8 +5,7 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import reducer from './reducers';
 import Actions from './actions';
-import { Router } from 'react-router';
-import createBrowserHistory from 'history/lib/createBrowserHistory'
+import { Router, browserHistory } from 'react-router';
 import routes from './routes';
 
 const store = createStore(reducer);
@@ -20,8 +19,8 @@ store.dispatch({
 });
 
 const application = (
-  <Provider store={store} history={createBrowserHistory()}>
-    <Router>{routes}</Router>
+  <Provider store={store}>
+    <Router history={browserHistory}>{routes}</Router>
   </Provider>
 );
 

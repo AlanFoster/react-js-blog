@@ -1,9 +1,10 @@
 var webpack = require('webpack');
-const DEV_PORT = 3000;
+const DEV_PORT = process.env.port || 3000;
+const DEV_HOST = '127.0.0.1';
 
 module.exports = {
   entry: [
-    `webpack-dev-server/client?http://0.0.0.0:${DEV_PORT}`,
+    `webpack-dev-server/client?http://${DEV_HOST}:${DEV_PORT}`,
     'webpack/hot/only-dev-server',
     './src/index.js'
   ],
@@ -34,6 +35,7 @@ module.exports = {
   devServer: {
     contentBase: './dist',
     port: DEV_PORT,
+    host: DEV_HOST,
     hot: true
   },
   plugins: [

@@ -2,7 +2,7 @@ import { expect } from 'chai';
 import React from 'react';
 import sd from 'skin-deep';
 import { List, Map } from 'immutable';
-import Component from '../index;
+import Component from '../index';
 
 describe('navigation', function () {
   beforeEach(function () {
